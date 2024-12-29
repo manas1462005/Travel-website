@@ -27,6 +27,7 @@ function App() {
         <Route path="/account" element={<ProfilePage />} />
         <Route path="/account/places" element={<PlacesPage/>} />
         <Route path="/account/places/new" element={<PlacesForumPage/>} />
+        <Route path="/account/places/:id" element={<PlacesForumPage />} />
         <Route path="/place/:id" element={<PlacePage />} />
         <Route path="/account/bookings" element={<BookingsPage />} />
         <Route path="/account/bookings/:id" element={<BookingPage />} />
