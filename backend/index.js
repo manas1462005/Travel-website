@@ -202,4 +202,19 @@ app.get('/bookings', async (req,res) => {
   res.json( await Booking.find({user:userData.id}).populate('place') );
 });
 
+app.get('/about', (req, res) => {
+  res.json({
+    title: 'About Us',
+    description: 'We are a platform connecting people and places seamlessly.',
+  });
+});
+
+app.get('/contact', (req, res) => {
+  res.json({
+    email: 'support@example.com',
+    phone: '+123 456 7890',
+  });
+});
+
+
 app.listen(4000);
