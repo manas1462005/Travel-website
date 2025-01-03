@@ -1,19 +1,25 @@
+// Footer.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Footer.css'; 
+import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-section">
-        <h4>About Us</h4>
-        <p>
-          <Link to="/about">here</Link>.
-        </p>
-      </div>
-      <div className="footer-section">
-        <h4>Contact Info</h4>
-        <p><Link to="/contact">here</Link>.</p>
+      <div className="footer-content">
+        <div className="footer-left">
+          <h2>World Traveling</h2>
+          <p>
+            Traveling with loved ones, friends, or even fellow adventurers fosters
+            a bond through shared experiences.
+          </p>
+        </div>
+        <div className="footer-right">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
