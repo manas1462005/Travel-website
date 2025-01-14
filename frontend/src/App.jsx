@@ -15,6 +15,8 @@ import BookingPage from './pages/BookingPage'
 import AboutPage from './pages/AboutUs'
 import ContactPage from './pages/ContactPage'
 import Footer from './Footer'
+import PaymentPortalPage from './pages/PaymentPortalPage'
+import ThankYouPage from './pages/ThankYouPage'
 
 axios.defaults.baseURL ='http://localhost:4000'
 axios.defaults.withCredentials= true;
@@ -34,12 +36,15 @@ function App() {
         <Route path="/place/:id" element={<PlacePage />} />
         <Route path="/account/bookings" element={<BookingsPage />} />
         <Route path="/account/bookings/:id" element={<BookingPage />} />
-        <Route path="/about" element={<AboutPage />} /> {/* New Route */}
-        <Route path="/contact" element={<ContactPage />} /> {/* New Route */}
+        <Route path="/about" element={<AboutPage />} /> 
+        <Route path="/contact" element={<ContactPage />} /> 
+        <Route path="/payment" element={<PaymentPortalPage />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
+
       </Route>
 
     </Routes>
-    <Footer /> {/* Add Footer */}
+    <Footer /> 
     </UserContextProvider> 
   )
 }

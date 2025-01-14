@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import AddressLink from "../AddressLink";
@@ -7,6 +7,7 @@ import BookingDates from "../BookingDates";
 
 export default function BookingPage() {
   const {id} = useParams();
+  const navigate = useNavigate();
   const [booking,setBooking] = useState(null);
   useEffect(() => {
     if (id) {
@@ -23,6 +24,10 @@ export default function BookingPage() {
     return '';
   }
 
+  const handlePayment = () => {
+    navigate('/payment', { state: { amount: booking.price } }); 
+  };
+
   return (
     <div className="my-8">
       <h1 className="text-3xl">{booking.place.title}</h1>
@@ -32,10 +37,13 @@ export default function BookingPage() {
           <h2 className="text-2xl mb-4">Your booking information:</h2>
           <BookingDates booking={booking} />
         </div>
-        <div className="bg-primary p-6 text-white rounded-2xl">
-          <div>Total price</div>
+        <button
+          onClick={handlePayment} 
+          className="bg-primary p-6 text-white rounded-2xl text-center hover:bg-blue-600"
+        >
+          <div>Pay Now</div>
           <div className="text-3xl">${booking.price}</div>
-        </div>
+        </button>
       </div>
       <PlaceGallery place={booking.place} />
     </div>

@@ -8,7 +8,7 @@ const ContactPage = () => (
       <div className='flex flex-col ml-16'>
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Contact Info</h1>
         <p className="text-xl text-gray-600 mb-4">
-          Email: <span className="text-blue-500 font-semibold">support@example.com</span>
+          Email: <span className="text-blue-500 font-semibold">abcd@example.com</span>
         </p>
         <p className="text-xl text-gray-600">
           Phone: <span className="text-blue-500 font-semibold">+123 456 7890</span>

@@ -216,5 +216,22 @@ app.get('/contact', (req, res) => {
   });
 });
 
+app.post('/initiate-payment', async (req, res) => {
+  mongoose.connect(process.env.MONGO_URL);
+  const userData = await getUserDataFromReq(req);
+  const { amount } = req.body;
+
+  if (!amount) {
+    return res.status(400).json({ error: 'Amount is required.' });
+  }
+
+  res.json({
+    success: true,
+    amount,
+    message: 'Payment initiated successfully.',
+  });
+});
+
+
 
 app.listen(4000);
